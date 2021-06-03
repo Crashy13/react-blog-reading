@@ -1,25 +1,34 @@
-import logo from './logo.svg';
+import { Component } from 'react';
 import './App.css';
+import BlogList from './BlogList';
+import BlogForm from './BlogForm';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      blogs: [],
+    }
+    this.addBlog = this.addBlog.bind(this);
+  }
+
+  addBlog(blog) {
+    const blogs = [ ...this.state.blogs ];
+    blogs.push(blog);
+    this.setState({ blogs });
+  }
+
+  render() {
+    return (
+      <>
+        <h1>Blog Posts</h1>
+        <BlogForm addBlog={this.addBlog}/>
+        <BlogList blogs={this.state.blogs} />
+      </>
+    )
+  }
+
+  }
+
 
 export default App;
