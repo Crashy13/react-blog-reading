@@ -27,8 +27,8 @@ handleSubmit(event) {
 render() {
   return (
     <form onSubmit={this.handleSubmit}>
-    <input name="title" value={this.state.title} onChange={this.handleInput} type="text" placeholder="Blog Title"/>
-    <textarea name="article" value={this.state.article} onChange={this.handleInput} placeholder="Blog Article"></textarea>
+    <input class="col-4" name="title" value={this.state.title} onChange={this.handleInput} type="text" placeholder="Blog Title"/>
+    <textarea class="col-9" name="article" value={this.state.article} onChange={this.handleInput} placeholder="Blog Article"></textarea>
     <button>Submit</button>
     </form>
   )
