@@ -12,6 +12,22 @@ class App extends Component {
     this.addBlog = this.addBlog.bind(this);
   }
 
+  componentDidMount() {
+    const blogs = [
+      { title: 'Marvel',
+        article: 'A lot of text here',
+      },
+      { title: 'DC',
+        article: 'A lot of text here',
+      },
+      { title: 'Star Wars',
+        article: 'A lot of text here',
+      },
+    ];
+
+    this.setState({ blogs })
+  }
+
   addBlog(blog) {
     const blogs = [ ...this.state.blogs ];
     blogs.push(blog);
