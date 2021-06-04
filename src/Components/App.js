@@ -34,15 +34,15 @@ class App extends Component {
 
   selectBlog(event) {
     const index = Number(event.currentTarget.dataset.index);
-    this.setState({ selection: this.state.blogs[index] })
+    this.setState({ selection: this.state.blogs[index] }) // sets state to the object that was clicked on with selectBlog
   }
 
 
   render() {
-    const blogs = this.state.blogs.map((blog, index) => (
+    const blogs = this.state.blogs.map((blog, index) => ( // filters through the array of objects that is blogs
       <li key={index} onClick={this.selectBlog} data-index={index}>
         <h2>{blog.title}</h2>
-      </li>
+      </li> // sets an event when the title is clicked to call the selectBlog function
     ));
     return (
       <>
